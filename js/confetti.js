@@ -387,8 +387,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   var confetti = new confetti.Context('confetti');
-  confetti.start();
   window.addEventListener('resize', function(event){
     confetti.resize();
   });
+  
+  const poop = document.getElementById('poop')
+  const headerBro = document.getElementById('header-bro')
+  const activeClass = "active";
+  
+  poop.addEventListener('click', () => {
+    poop.classList.add(activeClass);
+    headerBro.classList.add(activeClass)
+  
+    confetti.start();
+  })
 });
